@@ -1,6 +1,6 @@
 #!/bin/bash
 
-deepspeed ./llava/train/train_mem.py \
+deepspeed ./llava/train/train.py \
     --deepspeed ./scripts/zero2.json \
     --model_name_or_path mistralai/Mistral-7B-v0.1 \
     --version plain \
@@ -12,11 +12,12 @@ deepspeed ./llava/train/train_mem.py \
     --mm_vision_select_layer -2 \
     --mm_use_im_start_end False \
     --mm_use_im_patch_token False \
-    --bf16 True \
-    --output_dir ./checkpoints/llava-v1.5-13b-pretrain \
+    --bf16 False \
+    --bits 4 \
+    --output_dir ./checkpoints/llava-mistral-7b-pretrain-small \
     --cache_dir ./cache \
     --num_train_epochs 1 \
-    --per_device_train_batch_size 1 \
+    --per_device_train_batch_size 32 \
     --per_device_eval_batch_size 4 \
     --gradient_accumulation_steps 1 \
     --evaluation_strategy "no" \
@@ -28,7 +29,7 @@ deepspeed ./llava/train/train_mem.py \
     --warmup_ratio 0.03 \
     --lr_scheduler_type "cosine" \
     --logging_steps 1 \
-    --tf32 True \
+    --tf32 False \
     --model_max_length 2048 \
     --gradient_checkpointing True \
     --dataloader_num_workers 4 \

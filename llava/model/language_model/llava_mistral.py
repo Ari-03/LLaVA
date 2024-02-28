@@ -26,29 +26,39 @@ from transformers.modeling_outputs import CausalLMOutputWithPast
 from ..llava_arch import LlavaMetaModel, LlavaMetaForCausalLM
 
 
-class LlavaConfig(MistralConfig):
+class LlavaMistralConfig(MistralConfig):
     model_type = "llava_mistral"
 
 
 class LlavaMistralModel(LlavaMetaModel, MistralModel):
-    config_class = LlavaConfig
+    config_class = LlavaMistralConfig
 
     def __init__(self, config: MistralConfig):
         super(LlavaMistralModel, self).__init__(config)
 
 
 class LlavaMistralForCausalLM(MistralForCausalLM, LlavaMetaForCausalLM):
-    config_class = LlavaConfig
+    config_class = LlavaMistralConfig
 
-    def __init__(self, config):
+    def __init__(self, config, attn_implementation=None):
         super(MistralForCausalLM, self).__init__(config)
         self.model = LlavaMistralModel(config)
-        self.pretraining_tp = config.pretraining_tp
-        self.vocab_size = config.vocab_size
+
         self.lm_head = nn.Linear(config.hidden_size, config.vocab_size, bias=False)
 
         # Initialize weights and apply final processing
         self.post_init()
+
+#     def __init__(self, config):
+#             super().__init__(config)  # Call base class constructor first
+#             self.model = LlavaMistralModel(config)
+#             self.pretraining_tp = config.pretraining_tp
+#             self.vocab_size = config.vocab_size
+#             self.lm_head = nn.Linear(config.hidden_size, config.vocab_size, bias=False)
+
+#             # Initialize weights and apply final processing
+#             self.post_init()
+
 
     def get_model(self):
         return self.model
@@ -107,5 +117,5 @@ class LlavaMistralForCausalLM(MistralForCausalLM, LlavaMetaForCausalLM):
             _inputs['images'] = images
         return _inputs
 
-AutoConfig.register("llava_mistral", LlavaConfig)
-AutoModelForCausalLM.register(LlavaConfig, LlavaMistralForCausalLM)
+AutoConfig.register("llava_mistral", LlavaMistralConfig)
+AutoModelForCausalLM.register(LlavaMistralConfig, LlavaMistralForCausalLM)
