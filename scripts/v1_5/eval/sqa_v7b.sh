@@ -6,7 +6,7 @@ python -m llava.eval.model_vqa_science \
     --image-folder ./playground/data/eval/scienceqa/images/test \
     --answers-file ./playground/data/eval/scienceqa/answers/llava-v1.5-7b.jsonl \
     --single-pred-prompt \
-    --temperature 0.7 \
+    --temperature 0 \
     --conv-mode vicuna_v1
 
 python llava/eval/eval_science_qa.py \
