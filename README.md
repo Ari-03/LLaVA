@@ -8,7 +8,7 @@ pip install --upgrade pip  # enable PEP 660 support
 pip install -e .
 pip install -e ".[train]"
 pip install flash-attn --no-build-isolation
-pip install transformers==4.34.10
+pip install transformers==4.34.1
 ```
 
 ## Inference
@@ -20,11 +20,26 @@ python -m llava.serve.cli \
 ```
 
 ## Training
-1. Download Training Data
-- Dowload [blip_laion_cc_sbu_558k](https://huggingface.co/datasets/liuhaotian/LLaVA-Pretrain/blob/main/blip_laion_cc_sbu_558k.json) into playground/data/LLaVA-Pretrain
+### Pre-Training
+1. Download Pre-Training Data
+- Dowload [chat.json](https://huggingface.co/datasets/liuhaotian/LLaVA-CC3M-Pretrain-595K/blob/main/chat.json) into playground/data/LLaVA-Pretrain
+- Rename `chat.json` to `LLaVA-CC3M-Pretrain-595K.json`
 - Dowload and unizp [images](https://huggingface.co/datasets/liuhaotian/LLaVA-CC3M-Pretrain-595K/blob/main/images.zip) into playground/data/LLaVA-Pretrain/images
+2. Login into to Weights and Biases
 
-2. Train
+```sh
+wandb login
+```
+3. Pre-Training
+  
 ```Python
 ./scripts/Mistral/pretrain.sh
+```
+
+### Fine-Tuning
+1. Download Fine-Tune Data
+- #TBD
+2. Fine-Tune
+```Python
+./scripts/Mistral/finetune-lora.sh
 ```
