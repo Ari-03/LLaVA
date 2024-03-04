@@ -17,14 +17,14 @@ deepspeed llava/train/train-flash_attention_2.py \
     --group_by_modality_length True \
     --bf16 True \
     --output_dir ./checkpoints/llava-mistral-7b \
-    --num_train_epochs 1 \
+    --num_train_epochs 10 \
     --per_device_train_batch_size 16 \
     --per_device_eval_batch_size 4 \
     --gradient_accumulation_steps 1 \
     --evaluation_strategy "no" \
     --save_strategy "steps" \
-    --save_steps 50000 \
-    --save_total_limit 1 \
+    --save_steps 1000 \
+    --save_total_limit 11 \
     --learning_rate 2e-5 \
     --weight_decay 0. \
     --warmup_ratio 0.03 \
