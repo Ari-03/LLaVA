@@ -7,6 +7,7 @@ python -m llava.eval.model_vqa_science \
     --answers-file ./playground/data/eval/scienceqa/answers/llava-mistral-7b-pretrain.jsonl \
     --single-pred-prompt \
     --temperature 0 \
+    --load-4-bit \
     #--conv-mode vicuna_v1
 
 python llava/eval/eval_science_qa.py \
