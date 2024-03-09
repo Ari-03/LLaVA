@@ -7,7 +7,7 @@ python -m llava.eval.model_vqa_science \
     --answers-file ./playground/data/eval/scienceqa/answers/llava-mistral-7b-pretrain.jsonl \
     --model-base mistralai/Mistral-7B-v0.1 \
     --single-pred-prompt \
-    --temperature 0 \ 
+    --temperature 0  
 
 python llava/eval/eval_science_qa.py \
     --base-dir ./playground/data/eval/scienceqa \
