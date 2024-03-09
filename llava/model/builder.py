@@ -156,7 +156,3 @@ def load_pretrained_model(model_path, model_base, model_name, load_8bit=False, l
         context_len = 2048
 
     return tokenizer, model, image_processor, context_len
-    else:
-        context_len = 2048
-
-    return tokenizer, model, image_processor, context_len
