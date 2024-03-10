@@ -6,7 +6,7 @@ python -m llava.eval.model_vqa_science \
     --image-folder ./playground/data/eval/scienceqa/images/test \
     --answers-file ./playground/data/eval/scienceqa/answers/llava-mistral-7b-pretrain.jsonl \
     --model-base mistralai/Mistral-7B-v0.1 \
-    --num-chunks 10 \
+    --num-chunks 100 \
     --single-pred-prompt \
     --temperature 0
 
