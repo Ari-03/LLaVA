@@ -35,7 +35,7 @@ def eval_model(args):
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = model.to(device)
-    model.mm_projector = model.mm_projector.to(device)
+    # model.mm_projector = model.mm_projector.to(device)
 
     questions = json.load(open(os.path.expanduser(args.question_file), "r"))
     questions = get_chunk(questions, args.num_chunks, args.chunk_idx)
