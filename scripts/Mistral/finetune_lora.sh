@@ -24,7 +24,7 @@ deepspeed llava/train/train-flash_attention_2.py \
     --evaluation_strategy "no" \
     --save_strategy "epoch" \
     --save_steps 3 \
-    --save_total_limit 3 \
+    --save_total_limit 2 \
     --learning_rate 2e-5 \
     --weight_decay 0. \
     --warmup_ratio 0.03 \
