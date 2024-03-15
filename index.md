@@ -12,7 +12,7 @@ In an exciting development, we've enhanced LLaVA by incorporating the Mistral 7B
 ## Methods
 
 ### Models
-
+While incorporating multiple modes of input, like images, into a large language model sounds complex, the approach we take is quite direct. We start by processing the images with an advanced visual encoder that transforms them into a format the language model can understand. Once in this form, the language model, prompted by a user's request, analyzes the visual information. Following this, it follows a well-established language model pattern, crafting a response in natural language. This process simplifies the intricate task of merging visual and textual data, making it more accessible for a wider audience.
 
 <center><img src="assets/llavaarch.PNG" width=600></center>
 
