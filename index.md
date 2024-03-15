@@ -31,6 +31,4 @@ Additionally, we've explored another technique for enhancing our training proces
 
 ### Training
 
-## Results 
-
-## Conclusion
+## Results & Conclusion
