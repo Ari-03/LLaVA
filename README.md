@@ -48,7 +48,7 @@ wandb login
 3. Fine-Tune
 ```sh
 bash /scripts/Mistral/finetune_lora_hand_picked.sh
-bash /scripts/Mistral/finetune_lora_l2.sh.sh
+bash /scripts/Mistral/finetune_lora_l2.sh
 ```
 
 ## Evaluation
