@@ -16,7 +16,9 @@ While incorporating multiple modes of input, like images, into a large language 
 
 <center><img src="assets/llavaarch.PNG" width=600></center>
 
+Choosing the right Large Language Model (LLM) is crucial for the quality of the output. In this study, we decided to use Mistral, differing from past studies that preferred models like LLaMA and Vicuna. Mistral stands out because it has shown significantly better performance and faster processing speeds. This is mainly due to two technical advancements: sliding window attention and grouped query attention.
 
+Sliding window attention limits the focus of each layer to a nearby set of features, which helps the model efficiently manage data by concentrating on immediate information while still keeping an eye on the broader context. On the other hand, grouped query attention optimizes the model by streamlining calculations, avoiding unnecessary repetition, and thereby speeding up both learning and application phases. These innovations make Mistral a more effective and efficient choice for handling complex language tasks.
 
 
 ### Dataset
