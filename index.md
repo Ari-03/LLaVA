@@ -31,4 +31,10 @@ Additionally, we've explored another technique for enhancing our training proces
 
 ### Training
 
+Our training process, guided by LLaVA's recommendations, involves a structured approach to integrating visual and language models for instruction-following tasks. Initially, we keep the pretrained weights of both the visual encoder and the language model (LLM) frozen to maintain their learned representations. During this phase, the focus is on training a projection matrix that maps the visual encoder's output to the word embeddings of the LLM, using a specific set of 558k language-image instruction samples from LLaVA for this "pertaining" phase.
+
+Following this initial step, we proceed to unfreeze the language model weights to allow for fine-tuning on the same datasets. This fine-tuning phase is critical for adapting the model to the specific nuances of the instruction-following tasks at hand.
+
+The training is executed on a single A100 GPU, adhering to the hyperparameters recommended for each LLM. The compared model undergoes training for one epoch with an initial learning rate of 1e-3 and a batch size of 64. Subsequently, it enters the fine-tuning stage for 15 epochs with an adjusted learning rate of 2e-5 and a reduced batch size of 32. Throughout the process, the Adam optimizer is employed without any weight decay adjustments. This structured approach is designed to optimize the integration of visual and linguistic components for enhanced instruction-following capabilities.
+   
 ## Results & Conclusion
