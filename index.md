@@ -41,3 +41,9 @@ The training is executed on a single A100 GPU, adhering to the hyperparameters r
    
 ## Results & Conclusion
 <center><img src="assets/acc.png" width=600></center>
+
+Unfortunately, our final results were not able to reflect the improvement possible by this methodology. Although we do see a marginal increase in accuracy, it does not reflect an improved understanding of the dataset by the model. 
+
+There are several possible explanations. Most immediately, the ScienceQA dataset may contain too complex relationships between prompts and answers that cannot be easily discerned. This issue would suggest that in order to train models properly, a sizable dataset, as per Chinchilla's scaling law, is necessary to see the emergent behavior we've come to expect from large models. Although not all training data given by ScienceQA is fully educative, past a certain point, quantity matters over quality.
+
+However, this issue deserves further examination. Given our empirical understanding of large models, it would be hasty to claim that hand-selection or L2 distance maximization are irresponsible data-pruning methods. Should we be able to extend this project outside the scope of ten weeks, we might be able to refine our fine-tuning pipeline to produce more inspiring results. Given the profound effects that significantly reducing training time can have --- providing more accessible models, faster turnaround on development, and deeper insight into the theoretical foundations behind foundational models --- we find that this project is worth further exploration.
