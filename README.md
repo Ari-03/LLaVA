@@ -31,8 +31,8 @@ wandb login
 ```
 3. Pre-Training
   
-```Python
-./scripts/Mistral/pretrain.sh
+```sh
+bash /scripts/Mistral/pretrain.sh
 ```
 
 ### Fine-Tuning
@@ -46,6 +46,18 @@ wandb login
 ```
 
 3. Fine-Tune
-```Python
-./scripts/Mistral/finetune-lora.sh
+```sh
+bash /scripts/Mistral/finetune_lora_hand_picked.sh.sh
+bash /scripts/Mistral/finetune_lora_l2.sh.sh
+```
+
+## Evaluation
+### Pretrain
+```sh
+bash /scripts/Mistral/eval/sqa_mistral_7b_pretrain.sh
+```
+### Finetune
+```sh
+bash scripts/Mistral/eval/sqa_mistral_7b_hand_picked_2.sh
+bash scripts/Mistral/eval/sqa_mistral_7b_l2.sh
 ```
