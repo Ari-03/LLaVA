@@ -23,6 +23,8 @@ Sliding window attention limits the focus of each layer to a nearby set of featu
 
 ### Dataset
 
+<center><img src="assets/sqa_prune.PNG" width=600></center>
+
 To speed up training, we've developed a new approach that allows our model to match the performance of the original while using only a fraction (one-sixth) of the data originally needed for fine-tuning. We've carefully chosen 1,000 key pieces of data from the original 12,726, guided by three main principles designed to make the training process more effective.
 
 First, we emphasize the use of images, as our model already understands language, we aim to improve its ability to work with images and texts together. Second, we ensure diversity by including a variety of question types, covering all subjects at least once to ensure a well-rounded dataset. Third, we focus on including more challenging questions that require deeper analysis or knowledge, as these are more beneficial for training the model.
