@@ -39,7 +39,13 @@ wandb login
 1. Download Fine-Tune Data
 - Download and unzip [train.zip](https://drive.google.com/drive/folders/1w8imCXWYn2LxajmGeGH_g5DaL2rabHev?usp=sharing) into playground/data/train/finetune
 - Rename train directory to images
-2. Fine-Tune
+2. Login into to Weights and Biases
+
+```sh
+wandb login
+```
+
+3. Fine-Tune
 ```Python
 ./scripts/Mistral/finetune-lora.sh
 ```
