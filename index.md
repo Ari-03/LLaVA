@@ -40,7 +40,7 @@ Following this initial step, we proceed to unfreeze the language model weights t
 The training is executed on a single A100 GPU, adhering to the hyperparameters recommended for each LLM. The compared model undergoes training for one epoch with an initial learning rate of 1e-3 and a batch size of 64. Subsequently, it enters the fine-tuning stage for 15 epochs with an adjusted learning rate of 2e-5 and a reduced batch size of 32. Throughout the process, the Adam optimizer is employed without any weight decay adjustments. This structured approach is designed to optimize the integration of visual and linguistic components for enhanced instruction-following capabilities.
    
 ## Results & Conclusion
-<center><img src="assets/acc.png" width=600></center>
+<center><img src="assets/acc.png" width=700></center>
 
 Unfortunately, our final results were not able to reflect the improvement possible by this methodology. Although we do see a marginal increase in accuracy, it does not reflect an improved understanding of the dataset by the model. 
 
