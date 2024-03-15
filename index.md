@@ -33,7 +33,7 @@ Additionally, we've explored another technique for enhancing our training proces
 
 ### Training
 
-Our training process, guided by LLaVA's recommendations, involves a structured approach to integrating visual and language models for instruction-following tasks. Initially, we keep the pretrained weights of both the visual encoder and the language model (LLM) frozen to maintain their learned representations. During this phase, the focus is on training a projection matrix that maps the visual encoder's output to the word embeddings of the LLM, using a specific set of 558k language-image instruction samples from LLaVA for this "pertaining" phase.
+Our training process, guided by LLaVA's recommendations, involves a structured approach to integrating visual and language models for instruction-following tasks. Initially, we keep the pretrained weights of both the visual encoder and the language model (LLM) frozen to maintain their learned representations. During this phase, the focus is on training a projection matrix that maps the visual encoder's output to the word embeddings of the LLM, using a specific set of 558k language-image instruction samples from LLaVA for this "pretraining" phase.
 
 Following this initial step, we proceed to unfreeze the language model weights to allow for fine-tuning on the same datasets. This fine-tuning phase is critical for adapting the model to the specific nuances of the instruction-following tasks at hand.
 
